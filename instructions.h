@@ -5,36 +5,42 @@
 
 #ifndef LAB1C_INSTRUCTIONS_H
 #define LAB1C_INSTRUCTIONS_H
+// #define loadInitialIndex "mov $0, %%rax\n\t"  \
+//                         "shl $3, %%rax\n\t" \
+//                         "mov $5000, %%rsi\n\t"  \
+//                         "shl $3, %%rsi\n\t" \
+//                         "mov $6000, %%rdi\n\t"  \
+//                         "shl $3, %%rdi\n\t" \
+//                         "mov $7000, %%r8\n\t"  \
+//                         "shl $3, %%r8\n\t" \
+//                         "mov $8000, %%r9\n\t"  \
+//                         "shl $3, %%r9\n\t" \
+//                         "mov $9000, %%r10\n\t"  \
+//                         "shl $3, %%r10\n\t" \
+//                         "mov $4000, %%r11\n\t"  \
+//                         "shl $3, %%r11\n\t" \
+//                         "mov $3000, %%rbx\n\t"  \
+//                         "shl $3, %%rbx\n\t" \
+//                         "mov $2000, %%r12\n\t"  \
+//                         "shl $3, %%r12\n\t" \
+//                         "mov $1000, %%r13\n\t"  \
+//                         "shl $3, %%r13\n\t" \
+//                         "mov $1000000, %%r14\n\t"  \
+//                         "shl $3, %%r14\n\t" \
+//                         "mov $2000000, %%r15\n\t"  \
+//                         "shl $3, %%r15\n\t" \
+//                         "mov $100000, %%rdx\n\t" \
+//                         "shl $3, %%rdx\n\t"
 #define loadInitialIndex "mov $0, %%rax\n\t"  \
                         "shl $3, %%rax\n\t" \
-                        "mov $5000, %%rsi\n\t"  \
-                        "shl $3, %%rsi\n\t" \
-                        "mov $6000, %%rdi\n\t"  \
-                        "shl $3, %%rdi\n\t" \
-                        "mov $7000, %%r8\n\t"  \
-                        "shl $3, %%r8\n\t" \
-                        "mov $8000, %%r9\n\t"  \
-                        "shl $3, %%r9\n\t" \
-                        "mov $9000, %%r10\n\t"  \
-                        "shl $3, %%r10\n\t" \
-                        "mov $4000, %%r11\n\t"  \
-                        "shl $3, %%r11\n\t" \
-                        "mov $3000, %%rbx\n\t"  \
-                        "shl $3, %%rbx\n\t" \
-                        "mov $2000, %%r12\n\t"  \
-                        "shl $3, %%r12\n\t" \
-                        "mov $1000, %%r13\n\t"  \
-                        "shl $3, %%r13\n\t" \
-                        "mov $1000000, %%r14\n\t"  \
-                        "shl $3, %%r14\n\t" \
-                        "mov $2000000, %%r15\n\t"  \
-                        "shl $3, %%r15\n\t" \
+                        "mov $4, %%rsi\n\t" \
+                        "mov $6, %%rdi\n\t" \
                         "mov $100000, %%rdx\n\t" \
                         "shl $3, %%rdx\n\t"
 #define loadArrayFromEntry1 "mov %2, %%rcx\n\t"
 #define outputLastIndex "mov %%rax, %0\n\t" \
                         "mov %%rdx, %1\n\t"
-#define nop1 "nop\n\t"
+#define nop1 "add %%rsi, %%rdi\n\t"
 #define MAXELEMENTSARR 100000000
 //#define MAXELEMENTSARR 20
 #define WINDOWSIZE 10000
@@ -86,9 +92,9 @@
 #define movonlyr15 "mov (%%rcx, %%r15, 8), %%r15\n\t"
 #define movonlyd "mov (%%rcx, %%rdx,8), %%rdx\n\t"
 #define nopi \
-        nop100 
+        nop100 nop10 nop10 nop10 nop5 nop1 nop1
 // #define window1 movonlya movonlyrsi movonlyrdi movonlyr8 movonlyr9 movonlyr10 movonlyr11 movonlyrbx movonlyr12 movonlyr13 movonlyr14 movonlyr15 nopi movonlyd
-#define window1 movonlya movonlyrsi movonlyrdi movonlyr8 movonlyr9 movonlyr10 nopi movonlyd
+#define window1 movonlya nopi movonlyd
 #define window10 \
         window1 \
         window1 \
