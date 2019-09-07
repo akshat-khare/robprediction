@@ -39,12 +39,14 @@ int main( )
 //        printf("%d ",(int) array[i]);
 //    }
     printf("\n");
-    uint64_t ans;
+    uint64_t ans1=0;
+    uint64_t ans2=0;
     long long start = rdtsc();
-    asmblock(ans,array)
+    asmblock(ans1,ans2,array)
     long long stop = rdtsc();
     long long timeTaken = stop -start;
-    printf("ans %d\n",(int) ans);
+    printf("ans1 %d\n",(int) ans1);
+    printf("ans2 %d\n",(int) ans2);
     printf("time taken is %llu\n ",timeTaken/WINDOWSIZE);
     free(array);
     return 0;
