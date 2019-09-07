@@ -40,6 +40,7 @@
 #define loadArrayFromEntry1 "mov %2, %%rcx\n\t"
 #define outputLastIndex "mov %%rax, %0\n\t" \
                         "mov %%rdx, %1\n\t"
+// #define nop1 "nop\n\t"
 #define nop1 "add %%rsi, %%rdi\n\t"
 #define MAXELEMENTSARR 100000000
 //#define MAXELEMENTSARR 20
