@@ -15,7 +15,7 @@
 #define nop1 "nop\n\t"
 #define MAXELEMENTSARR 100000000
 //#define MAXELEMENTSARR 20
-#define WINDOWSIZE 1000
+#define WINDOWSIZE 10000
 #define nop10 \
         nop1 \
         nop1 \
@@ -47,7 +47,7 @@
 #define movonlya "mov (%%rcx, %%rax,8), %%rax\n\t"
 #define movonlyd "mov (%%rcx, %%rdx,8), %%rdx\n\t"
 #define nopi \
-        nop100
+        nop100 nop100 nop10 nop10 nop10
 #define window1 movonlya nopi movonlyd nopi
 #define window10 \
         window1 \
@@ -93,7 +93,7 @@
         window1000 \
         window1000 \
         window1000
-#define window window1000
+#define window window10000
 #define asmblock(ans1,ans2,array) \
 __asm__ volatile (loadInitialIndex\
                   loadArrayFromEntry1\
