@@ -27,6 +27,12 @@
         nop1 \
         nop1 \
         nop1
+#define nop5 \
+        nop1 \
+        nop1 \
+        nop1 \
+        nop1 \
+        nop1 \
 #define nop50 \
         nop10 \
         nop10 \
@@ -47,7 +53,7 @@
 #define movonlya "mov (%%rcx, %%rax,8), %%rax\n\t"
 #define movonlyd "mov (%%rcx, %%rdx,8), %%rdx\n\t"
 #define nopi \
-        nop100 nop100 nop10 nop10 nop10
+        nop100 nop100 nop10 nop10 nop5
 #define window1 movonlya nopi movonlyd nopi
 #define window10 \
         window1 \
